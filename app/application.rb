@@ -7,6 +7,10 @@ class Application
 
     if req.path.match(/items/)
       binding.pry
+      song_title = req.path.split("/items/").last 
+      song = @@songs.find{|s| s.title == song_title}
+
+      resp.write song.artist
       resp.write "#{}"
       resp.status = 200
     else
