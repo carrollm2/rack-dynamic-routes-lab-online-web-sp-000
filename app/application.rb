@@ -10,7 +10,6 @@ class Application
       item_name = req.path.split("/items/").last
       item_found = @@items.find{|item| item.name == item_name}
 
-
       if item_found.nil?
         resp.write "Item not found"
         resp.status 400
