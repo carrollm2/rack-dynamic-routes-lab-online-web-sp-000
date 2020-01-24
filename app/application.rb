@@ -12,7 +12,7 @@ class Application
 
       if item_found.nil?
         resp.write "Item not found"
-        resp.status 400
+        resp.status = 400
       else
         resp.write item_found.price
         resp.status = 200
