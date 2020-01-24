@@ -11,7 +11,7 @@ class Application
       item_found = @@items.find{|item| item.name == item_name}
 
 
-      if item_found.nil?:
+      if item_found.nil?
         resp.write "Item not found"
         resp.status 404
       else
