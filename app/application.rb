@@ -7,11 +7,10 @@ class Application
 
     if req.path.match(/items/)
       binding.pry
-      song_title = req.path.split("/items/").last
-      song = @@items.find{|item| s.title == song_title}
+      item_name = req.path.split("/items/").last
+      item_found = @@items.find{|item| item.name == item_name}
 
-      resp.write song.artist
-      resp.write "#{}"
+      resp.write item_found.price
       resp.status = 200
     else
       resp.write "Route not found"
